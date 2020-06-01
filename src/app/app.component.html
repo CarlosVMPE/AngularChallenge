@@ -1,0 +1,16 @@
+<app-navbar-header></app-navbar-header>
+
+<div class="text-center my-4">
+  <h1>
+    Drinks Challenge App
+  </h1>
+  <p>Esta es una aplicación de bebidas con Thecocktaildb</p>
+  <button (click)="showCategories('categories')" class="btn btn-outline-secondary mx-1">Categories</button>
+  <button (click)="showCategories('glasses')" class="btn btn-outline-success mx-1">Glasses</button>
+  <button (click)="showCategories('ingredients')" class="btn btn-outline-primary mx-1">Ingredients</button>
+  <button (click)="showCategories('alcoholic')" class="btn btn-outline-danger mx-1">Alcoholic</button>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

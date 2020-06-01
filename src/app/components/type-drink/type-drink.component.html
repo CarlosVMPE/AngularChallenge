@@ -1,0 +1,23 @@
+<div class="container row" *ngIf="typeDrinks">
+  <div *ngFor="let type of typeDrinks" class="mr-3 mb-3">
+    <button class="btn btn-primary" *ngIf="category == 'c' && type && type.strCategory && type.strCategory.length > 0"
+      (click)="findByCategory(type.strCategory)">
+      {{ type.strCategory }}
+    </button>
+    <button class="btn btn-primary" *ngIf="category == 'g' && type && type.strGlass && type.strGlass.length > 0"
+      (click)="findByCategory(type.strGlass)">
+      {{ type.strGlass }}
+    </button>
+    <button class="btn btn-primary" *ngIf="category == 'i' && type && type.strIngredient1 && type.strIngredient1.length > 0"
+      (click)="findByCategory(type.strIngredient1)">
+      {{ type.strIngredient1 }}
+    </button>
+    <button class="btn btn-primary" *ngIf="category == 'a' && type && type.strAlcoholic && type.strAlcoholic.length > 0"
+      (click)="findByCategory(type.strAlcoholic)">
+      {{ type.strAlcoholic }}
+    </button>
+  </div>
+</div>
+<div *ngIf="subTypeDrinks && subTypeDrinks.length > 0">
+  <app-drink [drinks]="subTypeDrinks" [pag]="pag"></app-drink>
+</div>

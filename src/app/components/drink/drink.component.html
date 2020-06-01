@@ -1,0 +1,13 @@
+<div class="card-columns my-4">
+  <div class="card" *ngFor="let item of drinks | slice:0:12">
+    <img [src]="item?.strDrinkThumb" class="card-img-top" [alt]="item?.strDrink"
+      (click)="showDetailDrink( item.idDrink )">
+    <div class="card-body">
+      <h5 class="card-title">{{ item?.strDrink }}</h5>
+      <p class="card-text" *ngIf="item.strInstructions">
+        {{ item?.strInstructions | slice:0:280 }}...
+      </p>
+      <button (click)="showDetailDrink( item.idDrink )" class="btn btn-primary">Ver más</button>
+    </div>
+  </div>
+</div>

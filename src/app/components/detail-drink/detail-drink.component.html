@@ -1,0 +1,47 @@
+<div class="mb-5 mx-auto animated fadeIn" style="max-width: 980px;" *ngIf="drink">
+  <div class="row no-gutters">
+    <div class="col-md-4 px-2">
+      <div *ngIf="drink && drink.strDrinkThumb">
+        <img [src]="drink.strDrinkThumb" class="card-img" alt="...">
+      </div>
+      <p class="text-muted my-2">Última actualización: {{ drink.dateModified | date}}</p>
+      <button class="btn btn-outline-danger" [routerLink]="['/'+ regresarA]">Regresar</button>
+    </div>
+    <div class="col-md-8 px-2">
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2 class="card-title" *ngIf="drink.strDrink">{{drink.strDrink}}</h2>
+          </li>
+          <li class="list-group-item">
+            <strong>Instrucciones: </strong>
+            <p class="card-text" *ngIf="drink.strInstructions">{{ drink.strInstructions }}</p>
+            <p class="card-text" *ngIf="drink.strInstructionsDE">{{ drink.strInstructionsDE }}</p>
+          </li>
+          
+          <li class="list-group-item text-center" *ngIf="drink.strCategory">
+            <div class="row">
+              <div class="col-12">
+                <strong>Categoría: </strong>{{ drink.strCategory }}
+              </div>
+            </div>
+          </li>
+
+          <li class="list-group-item text-center">
+            <strong>Ingredientes:</strong> <br>
+            <span class="mx-3" *ngIf="drink.strIngredient1">{{ drink?.strIngredient1 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient2">{{ drink?.strIngredient2 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient3">{{ drink?.strIngredient3 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient4">{{ drink?.strIngredient4 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient5">{{ drink?.strIngredient5 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient6">{{ drink?.strIngredient6 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient7">{{ drink?.strIngredient7 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient8">{{ drink?.strIngredient8 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient9">{{ drink?.strIngredient9 }}</span>
+            <span class="mx-3" *ngIf="drink.strIngredient10">{{ drink?.strIngredient10 }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
