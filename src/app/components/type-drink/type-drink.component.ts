@@ -17,9 +17,9 @@ export class TypeDrinkComponent implements OnInit {
   category: string;
 
   constructor(
-    private router: ActivatedRoute,
-    private cocktaildbservice: CocktaildbService,
-    private storageService: StorageService) { }
+    public router: ActivatedRoute,
+    public cocktaildbservice: CocktaildbService,
+    public storageService: StorageService) { }
 
   ngOnInit() {
 

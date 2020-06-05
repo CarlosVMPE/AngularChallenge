@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Drink } from '../../interfaces/drink.interface';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CocktaildbService } from '../../services/cocktaildb.service';
 
 @Component({
@@ -13,12 +13,12 @@ export class DetailDrinkComponent implements OnInit {
   drink: Drink = <Drink>{};
   regresarA: string = "";
 
-  constructor(private router: ActivatedRoute, private cocktaildbservice: CocktaildbService) {
+  constructor(public router: Router, public route: ActivatedRoute, public cocktaildbservice: CocktaildbService) {
     
   }
 
   ngOnInit() {
-    this.router.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       this.getCocktailById(params["id"]);
       this.regresarA = params["pag"];
 
@@ -26,8 +26,8 @@ export class DetailDrinkComponent implements OnInit {
         this.regresarA = 'type-drinks/' + this.regresarA;
       }
 
-      console.log('regresarA: ', this.regresarA);
     });
+    
   }
 
    async getCocktailById(id: string) {

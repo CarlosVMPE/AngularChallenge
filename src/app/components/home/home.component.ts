@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   drinks: Drink[] = [];
 
-  constructor(private cocktaildbservice: CocktaildbService) { }
+  constructor(public cocktaildbservice: CocktaildbService) { }
 
   ngOnInit() {
     this.getRandomDrinks();

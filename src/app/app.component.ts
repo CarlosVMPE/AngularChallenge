@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageService } from './services/storage.service';
 import { CocktaildbService } from './services/cocktaildb.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { CocktaildbService } from './services/cocktaildb.service';
 })
 export class AppComponent{
 
-  constructor(private router: Router, private cocktaildbservice: CocktaildbService){}
+  constructor(public router: Router, public cocktaildbservice: CocktaildbService){}
 
   showCategories(cat: string){
     this.cocktaildbservice.setListDrinks([]);

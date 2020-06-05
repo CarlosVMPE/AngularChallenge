@@ -15,7 +15,7 @@ export class CocktaildbService {
 
   url = 'https://www.thecocktaildb.com/api/json/v1/1/';
 
-  constructor(private http: HttpClient, private storageService: StorageService) {}
+  constructor(public http: HttpClient, public storageService: StorageService) {}
 
   setListDrinks(listDrinks: Drink[]){
     this.storageService.setData('listDrinks', JSON.stringify(listDrinks));

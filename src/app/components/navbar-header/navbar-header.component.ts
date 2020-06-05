@@ -20,9 +20,9 @@ export class NavbarHeaderComponent implements OnInit {
   category: string;
 
   constructor(
-    private router: Router,
-    private cocktaildbservice: CocktaildbService,
-    private storageService: StorageService) {}
+    public router: Router,
+    public cocktaildbservice: CocktaildbService,
+    public storageService: StorageService) {}
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -36,14 +36,14 @@ export class NavbarHeaderComponent implements OnInit {
     });
   }
 
-  displayFn(user: any): string {
-    return user && user.name ? user.name : "";
+  displayFn(obj: any): string {
+    return obj && obj.name ? obj.name : "";
   }
 
-  private _filter(name: string): any[] {
+  public _filter(name: string): any[] {
     const filterValue = name.toLowerCase();
     
-    if(filterValue.length == 1){
+    if(filterValue.length > 0){
       this.cocktaildbservice.getDrinkByFirstLetter(filterValue).subscribe((res: any) => {
         this.drinksFilter = res.drinks;
         this.drinksFilter.forEach(drink => {
